@@ -9,6 +9,7 @@
   - Report of the Quality of work done yesterday
   - Customer and Internal Releases every 2 weeks
 
+<u>------------------------------------------------------------------------------------------</u>
 ### Quick Overview of Continuous Delivery Pipeline
 * Overview
 ![Preview](images/1.jpeg)
@@ -27,7 +28,7 @@
 
     ![Preview](images/3.jpeg)
     ![Preview](images/4.jpeg)
-
+<u>------------------------------------------------------------------------------------------</u>
 ### Dependecny Managment
 * To develop any application , there will be lots of dependencies on other libraries/sdks
 * before building/packaging we need to download these dependencies
@@ -291,3 +292,86 @@ steps:
 ![Preview](images/54.jpg)
 ![Preview](images/55.jpg)
 ![Preview](images/56.jpg)
+
+<u>------------------------------------------------------------------------------------------</u>
+#### Building Project in Azure DevOps using Self Hosted Agent
+
+* Azure Pipeline yaml schema [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/?view=azure-pipelines)
+
+* **<u>Task</u>** in Azure DevOps Pipelines: Tasks internally get converted in low level os commands/api calls.
+* Azure DevOps has lot of predefined tasks [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/?view=azure-pipelines)
+
+![Preview](images/58.jpg)
+![Preview](images/59.jpg)
+
+* We can also get additional tasks from Market as a Extensions [Refer Here](https://marketplace.visualstudio.com/azuredevops)
+
+![Preview](images/60.jpg)
+
+* Lets achieve building the code without using any task.
+
+* <u>**Java Project**</u>
+  -  Manual command is 'mvn package'
+    - install Java 8
+    - install Maven (Game of life)
+```
+trigger:
+- master
+
+pool:
+  name: Default
+
+steps:
+  - bash: mvn package
+```
+* Push the above changes to azure repo and then and build will start (trigger)
+
+![Preview](images/61.jpg)
+![Preview](images/62.jpg)
+
+```
+trigger:
+- master
+
+pool:
+  name: Default
+
+steps:
+  - bash: mvn package
+    displayName: "Build package using Maven"
+```
+![Preview](images/63.jpg)
+
+### Lets try using tasks for maven [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/maven-v4?view=azure-pipelines)
+![Preview](images/64.jpg)
+```
+trigger:
+- master
+
+pool:
+  name: Default
+
+steps:
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'package'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      testRunTitle: 'RunUnitTests'
+```
+![Preview](images/65.jpg)
+![Preview](images/66.jpg)
+![Preview](images/67.jpg)
+<u>-----------------------------------------------------------------------------------------------</u>
+* <u>**Dotnet Project**</u>
+* Manual steps:
+    - Install .net 7
+```
+git clone https://github.com/nopSolutions/nopCommerce.git
+cd nopCommerce
+git checkout master
+dotnet restore src/NopCommerce.sln
+dotnet build src/NopCommerce.sln
+```
+* Find tasks to perform restore and build and fill with the values required to build this project google **'azure devops task list'**
