@@ -2,13 +2,12 @@
 * Agile had added smaller and frequent releases, this needs more aggressive automations than CI.
 
 **Expectation:**
-
-     * Automated Pipeline which when developer pushes changes
-     * Build/Package code
-     * Code Quality and Security Issues
-     * Automate test executions with System, Performance, Reliablity, Security
-     * Report of the Quality of work done yesterday
-     * Customer and Internal Releases every 2 weeks
+  - Automated Pipeline which when developer pushes changes
+  - Build/Package code
+  - Code Quality and Security Issues
+  - Automate test executions with System, Performance, Reliablity, Security
+  - Report of the Quality of work done yesterday
+  - Customer and Internal Releases every 2 weeks
 
 ### Quick Overview of Continuous Delivery Pipeline
 * Overview
@@ -19,14 +18,17 @@
 * Programming Languages can be categorized into 3 formats
 
     **Compiler based:**
+
     ![Preview](images/2.jpeg)
+
     **Interpreter based:**
 
     **Hybrid:**
+
     ![Preview](images/3.jpeg)
     ![Preview](images/4.jpeg)
 
-#### Dependecny Managment
+### Dependecny Managment
 * To develop any application , there will be lots of dependencies on other libraries/sdks
 * before building/packaging we need to download these dependencies
     * nodejs npm
@@ -34,7 +36,7 @@
     * .net nuget
     * java mvn
 
-#### Test Executions :
+### Test Executions :
 * unit tests (test code by writing code) => developers
 * integration tests
     * unit test
@@ -50,7 +52,7 @@
     * where will be test results
     * converting test results to some common formats (junit xml)
 
-#### Java Based Applications:
+### Java Based Applications:
 * To build <u>**Java**</u> Based applications, we have many tools
     - ANT
     - Maven
@@ -59,7 +61,7 @@
     - mvn package
     - mvn clean install 
 
-#### Building and Packaging **Dotnet**
+### Building and Packaging **Dotnet**
 * <u>.net framework versions:</u>
     - .net 2,3,4 (Windows)
     - .net 5 +
@@ -91,15 +93,15 @@
             - Release Pipelines
         *  Artifacts
 
-#### Azure DevOps can be used by two ways
+### Azure DevOps can be used by two ways
 * Self-Hosted [Refer here](https://learn.microsoft.com/en-us/azure/devops/server/download/azuredevopsserver?view=azure-devops)
 * Cloud-Hosted [Refer here](https://azure.microsoft.com/en-in/products/devops)
 
-#### Azure DevOps Services: Cloud Hosted Version of Azure DevOps
+### Azure DevOps Services: Cloud Hosted Version of Azure DevOps
    * Pricing: [Refer here](https://azure.microsoft.com/en-in/pricing/details/devops/azure-devops-services/)
    ![Preview](images/5.jpeg)
 
-#### <u>Initial setup:-</u>
+### <u>Initial setup:-</u>
 * Create a git account
 ![Preview](images/6.jpg)
 ![Preview](images/7.jpg)
@@ -108,8 +110,9 @@
 ![Preview](images/10.jpg)
 ![Preview](images/11.jpg)
 
-#### Importing an Existing git repo into Azure DevOps
+### Importing an Existing git repo into Azure DevOps
 * Import Repository from github into your account
+
 ![Preview](images/12.jpg)
 ![Preview](images/13.jpg)
 ![Preview](images/14.jpg)
@@ -118,6 +121,7 @@
 
 ### Azure DevOps Pipeline
 * Azure DevOps Pipelines are expressed in yaml formats in git repositories generally with name azure-pipelines.yaml
+
 ![Preview](images/17.jpg)
 * YAML Schema for azure devops pipelines   - [Refer Here](https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/?view=azure-pipelines)
  * [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/pipeline?view=azure-pipelines)
@@ -125,7 +129,7 @@
 * Key Concepts of Azure DevOps [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops)
 ![Preview](images/18.jpg)
 
-* Pipeline:
+### Pipeline:
     - Where should it execute? => Agents
     - When should it run => Trigger
     - What should happend when pipeline executes
