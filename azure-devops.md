@@ -252,7 +252,7 @@ tar zxvf ~/vsts-agent-linux-x64-3.220.5.tar.gz
 ![Preview](images/48.jpg)
 ![Preview](images/49.jpg)
 
-* Import a repository in Azure-Devops using CLI based
+### Import a repository in Azure-Devops using CLI based
   * Steps:
      - Create a folder in local machine
 ![Preview](images/23.jpg)
@@ -375,3 +375,29 @@ dotnet restore src/NopCommerce.sln
 dotnet build src/NopCommerce.sln
 ```
 * Find tasks to perform restore and build and fill with the values required to build this project google **'azure devops task list'**
+```
+trigger:
+- master
+
+pool:
+  name: Default
+
+steps:
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'restore'
+      projects: 'src/NopCommerce.sln'
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'build'
+      projects: 'src/NopCommerce.sln'
+      publishTestResults: true
+```
+![Preview](images/68.jpg)
+![Preview](images/69.jpg)
+![Preview](images/70.jpg)
+![Preview](images/71.jpg)
+![Preview](images/72.jpg)
+![Preview](images/73.jpg)
+![Preview](images/74.jpg)
+![Preview](images/75.jpg)
