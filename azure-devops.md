@@ -1,4 +1,5 @@
 ## Agile way of Software Development
+-------------------------------------
 * Agile had added smaller and frequent releases, this needs more aggressive automations than CI.
 
 **Expectation:**
@@ -401,3 +402,22 @@ steps:
 ![Preview](images/73.jpg)
 ![Preview](images/74.jpg)
 ![Preview](images/75.jpg)
+
+### Microsoft Hosted Agent
+----------------------------
+* The list of microsoft hosted agents [Refer Here](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml#software)
+
+![Preview](images/19.jpg)
+* **Setting up Microsoft hosted agent**
+(watch class video)
+![Preview](images/76.jpg)
+![Preview](images/77.jpg)
+![Preview](images/78.jpg)
+![Preview](images/79.jpg)
+![Preview](images/80.jpg)
+![Preview](images/81.jpg)
+![Preview](images/82.jpg)
+![Preview](images/83.jpg)
+![Preview](images/84.jpg)
+![Preview](images/85.jpg)
+![Preview](images/86.jpg)
