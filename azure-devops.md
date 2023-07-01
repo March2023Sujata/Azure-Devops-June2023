@@ -421,3 +421,26 @@ steps:
 ![Preview](images/84.jpg)
 ![Preview](images/85.jpg)
 ![Preview](images/86.jpg)
+
+### Azure DevOps pipeline Variables
+--------------------------------------
+
+* Define variables [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#user-defined-variables)
+    - System variables
+        - YAML or classic Build pipelines predefined variables [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml)
+        - classic Release pipelines [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/release/variables?view=azure-devops&tabs=batch)
+
+* Using **<u>CopyFiles@2</u>** - Copy files v2 task
+![Preview](images/87.jpg)
+![Preview](images/88.jpg)
+* This will help in deploying 
+![Preview](images/89.jpg)
+![Preview](images/90.jpg)
+
+* Using **<u>PublishBuildArtifacts@1</u>** - Publish build artifacts v1 task
+![Preview](images/91.jpg)
+![Preview](images/92.jpg)
+![Preview](images/93.jpg)
+![Preview](images/94.jpg)
+* we can copy build artifacts to other repos also like JFrog etc
+![Preview](images/95.jpg)
