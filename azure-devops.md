@@ -444,3 +444,69 @@ steps:
 ![Preview](images/94.jpg)
 * we can copy build artifacts to other repos also like JFrog etc
 ![Preview](images/95.jpg)
+
+### Dotnet project
+* Self Hosted Agent
+![Preview](images/96.jpg)
+
+* Microsoft Hosted Agent
+![Preview](images/97.jpg)
+![Preview](images/98.jpg)
+![Preview](images/99.jpg)
+### Variables in Azure-Devops
+-----------------------------
+
+* Azure devops variables [Refer Here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch)
+  - System variables(predefined variables) [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml)
+  - User defined variables [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#user-defined-variables)
+
+* <u>**Define variables:**</u>
+----------------------------------
+  -  Azure DevOps Pipeline has variables, we can assign values to be used within pipeline across stages, jobs or steps.
+  - The most common use of variables is to define a value that you can then use in your pipeline. All variables are strings and are mutable. The value of a variable can change from run to run or job to job of your pipeline. 
+  - When you define the same variable in multiple places with the same name, the most locally scoped variable wins. So, a variable defined at the job level can override a variable set at the stage level. A variable defined at the stage level overrides a variable set at the pipeline root level. 
+* Variables values can be changed during the pipeline execution
+* Pipeline execution has 3 phases
+    - Queue time phase (till agent allocated)
+    - Compile phase (before runtime chk synatx whether yaml is right or not)
+    - Runtime phase (during execution)
+* **<u>User-defined variables**</u>
+    * Variables can be used by 3 different expressions [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#understand-variable-syntax)
+      - Macro $(var)
+          - Macro syntax variables ($(var)) get processed during runtime before a task runs. 
+      - Template ${{ variables.var }}
+          - In a pipeline, template expression variables (${{ variables.var }}) get processed at compile time, before runtime starts.
+      - Runtime expression $[variables.var]
+          - Runtime expressions ($[variables.var]) also get processed during runtime but are intended to be used with conditions and expressions. 
+
+![Preview](images/100.jpg)
+
+* Set variables in pipeline [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#what-syntax-should-i-use)
+* Set variables in scripts [Refer Here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=bash)
+  - eg: - bash: |
+    echo "##vso[task.setvariable variable=myVar;]foo"
+    * vso: visual studio object(from VSTS)
+    * myvar is variable
+    * foo is a value
+
+* Variables can be created at
+--------------------------------
+    - pipeline level
+    - stages level
+    - jobs level 
+
+* variable in Game of life
+-----------------------------
+![Preview](images/101.jpg)
+
+* Variables at different pipeline's level
+------------------------------------------
+![Preview](images/102.jpg)
+![Preview](images/103.jpg)
+![Preview](images/104.jpg)
+![Preview](images/105.jpg)
+
+* Change the value of the variable
+-------------------------------------
+![Preview](images/106.jpg)
+![Preview](images/107.jpg)
