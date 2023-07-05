@@ -295,6 +295,7 @@ steps:
 ![Preview](images/56.jpg)
 
 <u>------------------------------------------------------------------------------------------</u>
+
 #### Building Project in Azure DevOps using Self Hosted Agent
 
 * Azure Pipeline yaml schema [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/?view=azure-pipelines)
@@ -404,7 +405,7 @@ steps:
 ![Preview](images/75.jpg)
 
 ### Microsoft Hosted Agent
-----------------------------
+
 * The list of microsoft hosted agents [Refer Here](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml#software)
 
 ![Preview](images/19.jpg)
@@ -445,6 +446,12 @@ steps:
 * we can copy build artifacts to other repos also like JFrog etc
 ![Preview](images/95.jpg)
 
+### Spring-Pet-clinic
+![Preview](images/118.jpg)
+![Preview](images/119.jpg)
+![Preview](images/120.jpg)
+![Preview](images/121.jpg)
+
 ### Dotnet project
 * Self Hosted Agent
 ![Preview](images/96.jpg)
@@ -460,7 +467,7 @@ steps:
   - System variables(predefined variables) [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml)
   - User defined variables [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#user-defined-variables)
 
-* <u>**Define variables:**</u>
+### <u>**Define variables:**</u>
 ----------------------------------
   -  Azure DevOps Pipeline has variables, we can assign values to be used within pipeline across stages, jobs or steps.
   - The most common use of variables is to define a value that you can then use in your pipeline. All variables are strings and are mutable. The value of a variable can change from run to run or job to job of your pipeline. 
@@ -481,8 +488,8 @@ steps:
 
 ![Preview](images/100.jpg)
 
-* Set variables in pipeline [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#what-syntax-should-i-use)
-* Set variables in scripts [Refer Here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=bash)
+### Set variables in pipeline [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#what-syntax-should-i-use)
+### Set variables in scripts [Refer Here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=bash)
   - eg: - bash: |
     echo "##vso[task.setvariable variable=myVar;]foo"
     * vso: visual studio object(from VSTS)
@@ -510,3 +517,47 @@ steps:
 -------------------------------------
 ![Preview](images/106.jpg)
 ![Preview](images/107.jpg)
+
+### **<u>Variable group</u>**
+* Suppose we have **multiple variables** and to use them in multiple pipelines,these values can be secrets or text values, in these kind of cases we use variable groups. To create a variable group [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml)
+
+* Lets create a variable group
+![Preview](images/108.jpg)
+![Preview](images/109.jpg)
+![Preview](images/110.jpg)
+![Preview](images/111.jpg)
+![Preview](images/112.jpg)
+![Preview](images/113.jpg)
+![Preview](images/114.jpg)
+![Preview](images/115.jpg)
+![Preview](images/116.jpg)
+![Preview](images/117.jpg)
+
+### **<u>Making Pipelines resuable using templates</u>**
+* Template usage reference [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops&pivots=templates-includes)
+* Template parameters [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/template-parameters?view=azure-devops)
+
+#### A reusable template with a name **"Java-Maven-Template.yaml"**
+![Preview](images/122.jpg)
+
+### **Spring-pet-clinic:-** 
+![Preview](images/123.jpg)
+
+### **Game-of-life:-** 
+![Preview](images/124.jpg)
+
+### Now store the template file into a separete repo
+![Preview](images/125.jpg)
+![Preview](images/126.jpg)
+![Preview](images/127.jpg)
+![Preview](images/128.jpg)
+
+* Now lets try to reuse the template which is in different git repo with the help of Azure-devops pipeline resources [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops&pivots=templates-includes#use-other-repositories).
+* Azure DevOps Pipline resources [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/resources?view=azure-devops&tabs=schema)
+* Define a repositories resource [Refer here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/resources?view=azure-devops&tabs=schema#define-a-repositories-resource)
+
+
+![Preview](images/133.jpg)
+![Preview](images/130.jpg)
+![Preview](images/131.jpg)
+![Preview](images/132.jpg)
